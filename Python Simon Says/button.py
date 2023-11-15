@@ -46,6 +46,7 @@ class Button(pygame.sprite.Sprite):
         self.image.fill(self.color_on)
         screen.blit(self.image, (self.rect.x, self.y))
         pygame.mixer.music.load(self.sound)
+        pygame.mixer.music.play()
         pygame.display.update()
         self.image.fill(self.color_off)
         screen.blit(self.image, (self.rect.x, self.rect.y))

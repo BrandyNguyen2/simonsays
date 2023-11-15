@@ -90,28 +90,28 @@ def player_turn():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1: # button click occured
             # Grab the current position of mouse here
-                pos = pygame.mouse.get_pos
-            if green.selected(pos): # green button was selected
-                green.update(SCREEN) # illuminate button
-                players_sequence.append("green") # add to player sequence
-                check_sequence(players_sequence) # check if player choice was correct
-                turn_time = time.time() # reset timer
-                # Check other three options
-            if red.selected(pos): # green button was selected
-                red.update(SCREEN) # illuminate button
-                players_sequence.append("red") # add to player sequence
-                check_sequence(players_sequence) # check if player choice was correct
-                turn_time = time.time() # reset timer
-            if blue.selected(pos): # green button was selected
-                blue.update(SCREEN) # illuminate button
-                players_sequence.append("blue") # add to player sequence
-                check_sequence(players_sequence) # check if player choice was correct
-                turn_time = time.time() # reset timer
-            if yellow.selected(pos): # green button was selected
-                yellow.update(SCREEN) # illuminate button
-                players_sequence.append("yellow") # add to player sequence
-                check_sequence(players_sequence) # check if player choice was correct
-                turn_time = time.time() # reset timer
+                pos = pygame.mouse.get_pos()
+                if green.selected(pos): # green button was selected
+                    green.update(SCREEN) # illuminate button
+                    players_sequence.append("green") # add to player sequence
+                    check_sequence(players_sequence) # check if player choice was correct
+                    turn_time = time.time() # reset timer
+                    # Check other three options
+                if red.selected(pos): # green button was selected
+                    red.update(SCREEN) # illuminate button
+                    players_sequence.append("red") # add to player sequence
+                    check_sequence(players_sequence) # check if player choice was correct
+                    turn_time = time.time() # reset timer
+                if blue.selected(pos): # green button was selected
+                    blue.update(SCREEN) # illuminate button
+                    players_sequence.append("blue") # add to player sequence
+                    check_sequence(players_sequence) # check if player choice was correct
+                    turn_time = time.time() # reset timer
+                if yellow.selected(pos): # green button was selected
+                    yellow.update(SCREEN) # illuminate button
+                    players_sequence.append("yellow") # add to player sequence
+                    check_sequence(players_sequence) # check if player choice was correct
+                    turn_time = time.time() # reset timer
     # If player does not select a button within 3 seconds then the game closes
     if not time.time() <= turn_time + 3:
         game_over()
