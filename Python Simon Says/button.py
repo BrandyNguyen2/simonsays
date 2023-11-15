@@ -1,5 +1,3 @@
-import random
-import time
 import pygame
 pygame.init()
 
@@ -16,8 +14,8 @@ class Button(pygame.sprite.Sprite):
         self.image.fill(self.color_off)
         self.rect = self.image.get_rect()
         # Assign x, y coordinates to the top left of the sprite
-        self.rect.topleft = (x, y)
-        self.clicked = False
+        self.rect.topleft = (self.x, self.y)
+
         
     '''
     Draws button sprite onto pygame window when called
@@ -25,6 +23,7 @@ class Button(pygame.sprite.Sprite):
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
     
+
     '''
     Used to check if given button is clicked/selected by player
     '''
@@ -38,13 +37,10 @@ class Button(pygame.sprite.Sprite):
     Sets button color back to default color after being illuminated.
     '''
     def update(self, screen):
-    # Illuminate button by filling color here
-    # blit the image here so it is visible to the player
-    # Play sound
-        self.image.fill(self.color_on)
-        screen.blit(self.image, (self.x, self.y))
+        self.image.fill(self.color_on) # Illuminate button by filling color here
+        screen.blit(self.image, (self.x, self.y)) # blit the image here so it is visible to the player
         pygame.mixer.music.load(self.sound)
-        pygame.mixer.music.play()
+        pygame.mixer.music.play() # Play sound
         pygame.display.update()
         self.image.fill(self.color_off)
         screen.blit(self.image, (self.x, self.y))
