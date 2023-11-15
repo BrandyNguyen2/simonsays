@@ -2,6 +2,8 @@ import pygame
 import random
 import time
 from button import Button # By importing Button we can access methods from the Button class
+
+
 pygame.init()
 clock = pygame.time.Clock()
 # Constants
@@ -18,15 +20,15 @@ YELLOW_ON = (255, 255, 0)
 YELLOW_OFF = (227, 227, 0)
 # Pass in respective sounds for each color
 
-GREEN_SOUND = pygame.mixer.Sound("bell1.mp3") # bell1
-RED_SOUND = pygame.mixer.Sound("bell2.mp3") # bell2
-BLUE_SOUND = pygame.mixer.Sound("bell3.mp3") # bell3
-YELLOW_SOUND = pygame.mixer.Sound("bell4.mp3") # bell4
+GREEN_SOUND ="bell1.mp3" # bell1
+RED_SOUND = "bell2.mp3" # bell2
+BLUE_SOUND = "bell3.mp3" # bell3
+YELLOW_SOUND = "bell4.mp3" # bell4
 # Button Sprite Objects
 green = Button(GREEN_ON, GREEN_OFF, GREEN_SOUND, 10, 10)
 red = Button(RED_ON, RED_OFF, RED_SOUND, 260, 10)
 blue = Button(BLUE_ON, BLUE_OFF, BLUE_SOUND, 260, 260) 
-yellow = Button(BLUE_ON, BLUE_OFF, BLUE_SOUND, 10, 260)
+yellow = Button(YELLOW_ON, YELLOW_OFF, YELLOW_SOUND, 10, 260)
 # Variables
 colors = ["green", "red", "blue", "yellow"]
 cpu_sequence = []
@@ -135,7 +137,7 @@ while True:
         if event.type == pygame.QUIT:
             pygame.display.quit()
             pygame.quit()
-        quit()
+            quit()
 
     pygame.display.update()
     draw_board() # draws buttons onto pygame screen
