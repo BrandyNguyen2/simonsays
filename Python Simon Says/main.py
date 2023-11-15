@@ -88,27 +88,31 @@ def player_turn():
     players_sequence = []
     while time.time() <= turn_time + 3 and len(players_sequence) < len(cpu_sequence):
         for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONUP and event.button == 1: # button click occured
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1: # button click occured
             # Grab the current position of mouse here
                 pos = pygame.mouse.get_pos()
                 if green.selected(pos): # green button was selected
                     green.update(SCREEN) # illuminate button
+                    print('green selected')
                     players_sequence.append("green") # add to player sequence
                     check_sequence(players_sequence) # check if player choice was correct
                     turn_time = time.time() # reset timer
                     # Check other three options
                 if red.selected(pos): # green button was selected
                     red.update(SCREEN) # illuminate button
+                    print('red selected')
                     players_sequence.append("red") # add to player sequence
                     check_sequence(players_sequence) # check if player choice was correct
                     turn_time = time.time() # reset timer
                 if blue.selected(pos): # green button was selected
                     blue.update(SCREEN) # illuminate button
+                    print('blue selected')
                     players_sequence.append("blue") # add to player sequence
                     check_sequence(players_sequence) # check if player choice was correct
                     turn_time = time.time() # reset timer
                 if yellow.selected(pos): # green button was selected
                     yellow.update(SCREEN) # illuminate button
+                    print('yellow selected')
                     players_sequence.append("yellow") # add to player sequence
                     check_sequence(players_sequence) # check if player choice was correct
                     turn_time = time.time() # reset timer
