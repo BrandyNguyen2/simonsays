@@ -23,7 +23,7 @@ class Button(pygame.sprite.Sprite):
     Draws button sprite onto pygame window when called
     '''
     def draw(self, screen):
-        screen.blit(self.image, (self.rect.x, self.rect.y))
+        screen.blit(self.image, (self.x, self.y))
     
     '''
     Used to check if given button is clicked/selected by player
