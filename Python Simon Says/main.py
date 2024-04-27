@@ -56,11 +56,11 @@ def cpu_turn():
     if choice == "green":
         green.update(SCREEN)
     # Check other three color options
-    if choice == "red":
+    elif choice == "red":
         red.update(SCREEN)
-    if choice == "blue":
+    elif choice == "blue":
         blue.update(SCREEN)
-    if choice == "yellow":
+    elif choice == "yellow":
         yellow.update(SCREEN)
 
 
@@ -121,7 +121,7 @@ def player_turn():
                     players_sequence.append("yellow") # add to player sequence
                     check_sequence(players_sequence) # check if player choice was correct
                     turn_time = time.time() # reset timer
-    # If player does not select a button within 3 seconds then the game closes
+    # If player does not select a button within 3 seconds then the game closes (You can adjust the time to give the player more time to select a color)
     if not time.time() <= turn_time + 3:
         game_over()
 

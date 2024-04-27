@@ -23,14 +23,12 @@ class Button(pygame.sprite.Sprite):
     def draw(self, screen):
         screen.blit(self.image, (self.x, self.y))
     
-
     '''
     Used to check if given button is clicked/selected by player
     '''
     def selected(self, mouse_pos):
     # Check if button was selected. Pass in mouse_pos.
         return pygame.mouse.get_pressed()[0] and self.rect.collidepoint(mouse_pos)
-    
     
     '''
     Illuminates button selected and plays corresponding sound.
