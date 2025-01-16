@@ -8,3 +8,6 @@
 2. Open the file in Visual Studio Code
 3. Run main.py
 4. Can change the duration of game on line 125
+
+# References:
+- https://www.pygame.org/docs/tut/newbieguide.html
